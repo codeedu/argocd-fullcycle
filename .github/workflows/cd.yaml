@@ -13,9 +13,9 @@ jobs:
       - name: build image and push to docker hub
         uses: docker/build-push-action@v1.1.0
         with:
-          username: wesleywillians
+          username: divand
           password: ${{ secrets.DOCKER_PASSWORD }}
-          repository: wesleywillians/argocd-fullcycle
+          repository: divand/wildfly-test
           tags: ${{ github.sha }}, latest     
 
   deploy:
@@ -34,7 +34,7 @@ jobs:
       - name: update k8s
         run: |
           cd k8s
-          kustomize edit set image goapp=wesleywillians/argocd-fullcycle:${{ github.sha }}
+          kustomize edit set image wildfly-test=divand/wildfly-test:${{ github.sha }}
           cat kustomization.yaml
 
       - name: commit
