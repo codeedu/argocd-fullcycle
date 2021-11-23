@@ -9,4 +9,4 @@ namespace: default
 images:
 - name: wildfly-test
   newName: divand/wildfly-test
-  newTag: 91473186b4554675545165341eb04dabefd292dc
+  newTag: 362628d948fa6aa3e7652f841ac883611519a0ee
