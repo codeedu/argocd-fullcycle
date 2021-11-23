@@ -1,12 +1,12 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - deployment.yml
-  - service.yml
+- deployment.yml
+- service.yml
 
 namespace: default
 
 images:
-  - name: wildfly-test
-    newName: divand/wildfly-test
-    newTag: 0.0.1-0691bab
+- name: wildfly-test
+  newName: divand/wildfly-test
+  newTag: fe06a18782c084b8a70c0754a0276669d3a0df94
