@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: wildfly-test
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: wildfly-test
+    template:
+        metadata:
+            labels:
+                app: wildfly-test
+        spec:
+            containers:
+                - name: wildfly-test
+                  image: divand/wildfly-test
+                  ports:
+                    - containerPort: 8080
+                    - containerPort: 9990
+
